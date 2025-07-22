@@ -17,7 +17,7 @@ A modern Express.js template built with TypeScript, featuring a clean modular ar
 ## Project Structure
 
 ```
-express-tutorial/
+express-template/
 ├── src/
 │   ├── config.ts              # Application configuration
 │   ├── prisma.ts              # Prisma client setup
