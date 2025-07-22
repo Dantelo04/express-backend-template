@@ -24,7 +24,6 @@ const createUser = async (req, res) => {
     );
     res.json(rows);
   } catch (error) {
-    
     if (error.code === "23505") {
       return res.status(400).json({ message: "El usuario ya existe" });
     }
@@ -51,10 +50,20 @@ const updateUser = async (req, res) => {
   res.json(rows);
 };
 
+const getPostsByUser = async (req, res) => {
+  const { id } = req.params;
+  const { rows } = await pool.query(
+    `SELECT * FROM ${tableNames.post} WHERE user_id = $1`,
+    [id]
+  );
+  res.json(rows);
+};
+
 export default {
   getUsers,
   getUser,
   createUser,
   deleteUser,
   updateUser,
+  getPostsByUser,
 };

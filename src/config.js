@@ -8,4 +8,5 @@ export const config = {
 
 export const tableNames = {
   user: "users",
+  post: "posts",
 };
